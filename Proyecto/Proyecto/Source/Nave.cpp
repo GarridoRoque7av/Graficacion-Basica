@@ -62,21 +62,22 @@ void Nave::Disparar(int balas)
 
 void Nave::Draw()
 {
-	if (visible){
+	if (visible)
+		
 		nave->Draw();
-		for (int i = 0; i < MAXIMO_DE_BALAS; i++)
+	for (int i = 0; i < MAXIMO_DE_BALAS; i++)
+	{
+		bala[i]->Draw();
+		switch (tipoNave)
 		{
-			bala[i]->Draw();
-			switch (tipoNave)
-			{
-			case NAVE_PROPIA:
-				bala[i]->MoverArribaAbajo(-10);
-				break;
+		case NAVE_PROPIA:
+		
+			bala[i]->MoverArribaAbajo(-10);
+			break;
 
-			case NAVE_ENEMIGA:
-				bala[i]->MoverArribaAbajo(10);
-				break;
-			}
+		case NAVE_ENEMIGA:
+			bala[i]->MoverArribaAbajo(10);
+			break;
 		}
 	}
 }
