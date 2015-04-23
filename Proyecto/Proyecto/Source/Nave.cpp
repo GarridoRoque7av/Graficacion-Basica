@@ -70,8 +70,10 @@ void Nave::Draw()
 		bala[i]->Draw();
 		switch (tipoNave)
 		{
+
+			
 		case NAVE_PROPIA:
-		
+			nave->ScaleXYZ(80.f, 80.f, 80.f);
 			bala[i]->MoverArribaAbajo(-10);
 			break;
 
@@ -100,6 +102,7 @@ void Nave::MoverIzquierda(int velocidad)
 }
 Sprite*Nave::GetNaveObjeto()
 {
+
 	return nave;
 }
 
