@@ -73,7 +73,7 @@ void Nave::Draw()
 
 			
 		case NAVE_PROPIA:
-			nave->ScaleXYZ(80.f, 80.f, 80.f);
+			nave->ScaleXYZ(20.f, 20.f, 20.f);
 			bala[i]->MoverArribaAbajo(-10);
 			break;
 
