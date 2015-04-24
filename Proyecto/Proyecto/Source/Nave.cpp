@@ -80,6 +80,9 @@ void Nave::Draw()
 			break;
 
 		case NAVE_ENEMIGA:
+			nave->translate_y = 45;
+			nave->rotate_z = 90;
+			nave->ScaleXYZ(20.f, 20.f, 20.f);
 			bala[i]->MoverArribaAbajo(10);
 			break;
 		}

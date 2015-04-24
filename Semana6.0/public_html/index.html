@@ -262,7 +262,7 @@ function mvPopMatrix() {
             0.0, 1.0,
 
             // Right face
-               0.0, 0.0,
+            0.0, 0.0,
             1.0, 0.0,
             1.0, 1.0,
             0.0, 1.0,
@@ -317,9 +317,11 @@ function mvPopMatrix() {
 		
               
         mat4.translate(mvMatrix, [-4, -2.0, -16.0]);
+         
 
 		mvPushMatrix();
-        mat4.rotate(mvMatrix, degToRad(rTri), [1, 0, 0]);
+                  mat4.translate(mvMatrix, [-2.0, 5.0, 0.0]);
+   //     mat4.rotate(mvMatrix, degToRad(rTri), [1, 0, 0]);
 		
 	gl.bindBuffer(gl.ARRAY_BUFFER, triangleVertexPositionBuffer);
         gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, triangleVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
@@ -337,9 +339,9 @@ function mvPopMatrix() {
         
         mvPopMatrix();
 		 
-	mat4.translate(mvMatrix, [7.0, 0.0, 0.0]);
+	mat4.translate(mvMatrix, [10.0, -1.0, 0.0]);
 	      mvPushMatrix();
-        mat4.rotate(mvMatrix, degToRad(rSquare), [0, 1, 0]);
+       // mat4.rotate(mvMatrix, degToRad(rSquare), [0, 1, 0]);
        
 	gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
         gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, squareVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
@@ -353,9 +355,9 @@ function mvPopMatrix() {
 	setMatrixUniforms();
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, squareVertexPositionBuffer.numItems);
 	mvPopMatrix();
-        
-      
-	/*	
+     
+    
+	/*
 		
 	mat4.translate(mvMatrix, [-11.0, 5.0, 0.0]);
  mvPushMatrix();
@@ -391,7 +393,7 @@ function mvPopMatrix() {
         {
             handleLoadedTexture(neheTexture);
         }
-        neheTexture.image.src = "UPBC.gif";
+      //  neheTexture.image.src = "UPBC.gif";
     }
 
 	
@@ -402,7 +404,7 @@ function mvPopMatrix() {
         initBuffers();
 		initTexture();
 
-       	gl.clearColor(0.5, 0.0, 1.0, 1.0);
+       	gl.clearColor(0.1, 1.0, 1.0, 1.0);
         gl.enable(gl.DEPTH_TEST);
 		tick();  
         //drawScene();
